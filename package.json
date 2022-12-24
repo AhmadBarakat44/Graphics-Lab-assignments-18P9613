@@ -1,0 +1,19 @@
+{
+  "name": "graphics-final-project-18p9613",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "deploy": "gh-pages -d dist",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "gh-pages": "^4.0.0",
+    "three": "^0.147.0"
+  }
+}

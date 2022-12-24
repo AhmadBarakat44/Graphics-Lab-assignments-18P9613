@@ -9,13 +9,13 @@ export class FruitSpawner extends Object
     fruitscores = [1 , 2];
     fruitalphas = 
     [
-        new Three.TextureLoader().load('./assets/apple_alpha.png'),
-        new Three.TextureLoader().load('./assets/banana_alpha.png'),
+        new Three.TextureLoader().load('./game assets/apple_alpha.png'),
+        new Three.TextureLoader().load('./game assets/banana_alpha.png'),
     ];
     fruitsprites = 
     [
-        new Three.TextureLoader().load('./assets/apple.png'),
-        new Three.TextureLoader().load('./assets/banana.png'),
+        new Three.TextureLoader().load('./game assets/apple.png'),
+        new Three.TextureLoader().load('./game assets/banana.png'),
     ];
     constructor()
     {

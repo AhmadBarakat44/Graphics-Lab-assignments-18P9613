@@ -27,7 +27,7 @@ export class ObjectHandler
     {
         ObjectHandler.scene = new Three.Scene();
         //background//
-        const skybox = new Three.TextureLoader().load('./assets/background.png')
+        const skybox = new Three.TextureLoader().load('./game assets/background.png')
         ObjectHandler.scene.background = skybox;
         //background//
 
@@ -36,7 +36,7 @@ export class ObjectHandler
         ObjectHandler.camera.add(ObjectHandler.listener);
         ObjectHandler.audioloader = new Three.AudioLoader();
         const BGsound = new Three.Audio(ObjectHandler.listener);
-        ObjectHandler.audioloader.load('./assets/BGM.mp3',function (buffer)
+        ObjectHandler.audioloader.load('./game assets/BGM.mp3',function (buffer)
         {
             BGsound.setBuffer(buffer);
             BGsound.setLoop(true);

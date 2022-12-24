@@ -38,7 +38,7 @@ export class Fruit extends Object
         if(obj.name.toString().includes("player"))
         {
             const pickUpAudio = new Three.Audio(ObjectHandler.listener);
-            ObjectHandler.audioloader.load('./assets/collect.wav',function (buffer)
+            ObjectHandler.audioloader.load('./game assets/collect.wav',function (buffer)
             {
                 pickUpAudio.setBuffer(buffer);
                 pickUpAudio.setVolume(0.3);

@@ -14,11 +14,11 @@ export class Player extends Object
     {
         this.name = "player";
         this.geometry = new Three.BoxGeometry(100,100,100);
-        const sprite = new Three.TextureLoader().load('./assets/bowl.png');
+        const sprite = new Three.TextureLoader().load('./game assets/bowl.png');
         this.material = new Three.MeshStandardMaterial({
             map: sprite
         });
-        this.material.alphaMap = new Three.TextureLoader().load('./assets/bowl_alpha.png');
+        this.material.alphaMap = new Three.TextureLoader().load('./game assets/bowl_alpha.png');
         this.material.transparent = true;
         this.mesh = new Three.Mesh(this.geometry,this.material);
         this.boundingbox = new Three.Box3().setFromObject(this.mesh);

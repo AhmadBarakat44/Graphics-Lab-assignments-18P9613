@@ -1,5 +1,4 @@
 import * as Three from 'three';
-import { Box3 } from 'three';
 export class ObjectHandler
 {
     static scene
@@ -8,6 +7,8 @@ export class ObjectHandler
     static audioloader;
     static listener;
     static camera;
+    static skybox;
+    static bgmpath;
     constructor(){}
     static addobject(obj)
     {
@@ -27,8 +28,7 @@ export class ObjectHandler
     {
         ObjectHandler.scene = new Three.Scene();
         //background//
-        const skybox = new Three.TextureLoader().load('./game assets/background.png')
-        ObjectHandler.scene.background = skybox;
+        ObjectHandler.scene.background = this.skybox;
         //background//
 
         //audio//
@@ -36,7 +36,7 @@ export class ObjectHandler
         ObjectHandler.camera.add(ObjectHandler.listener);
         ObjectHandler.audioloader = new Three.AudioLoader();
         const BGsound = new Three.Audio(ObjectHandler.listener);
-        ObjectHandler.audioloader.load('./game assets/BGM.mp3',function (buffer)
+        ObjectHandler.audioloader.load(this.bgmpath,function (buffer)
         {
             BGsound.setBuffer(buffer);
             BGsound.setLoop(true);
@@ -89,5 +89,9 @@ export class ObjectHandler
                 });
             }
         });
+    }
+    static degToRad(deg)
+    {
+        return (deg*Math.PI)/180;
     }
 }

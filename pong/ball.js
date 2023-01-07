@@ -25,14 +25,9 @@ export class Ball extends Object
         });
         this.mesh = new Three.Mesh(this.geometry,this.material);
         this.boundingbox = new Three.Box3().setFromObject(this.mesh);
-        var x = Math.floor(Math.random()*(180));
-        var y = Math.floor(Math.random()*(180));
-        var mag = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
-        this.direction.x = (x/mag);
-        this.direction.y = (y/mag);
+        this.resetball();
         setInterval(() => {
             this.speed +=.5
-            console.log("FASTER");
         }, 30000);
     }
 
@@ -62,14 +57,13 @@ export class Ball extends Object
     resetball()
     {
         this.mesh.position.set(0,0,0);
-        var temp = this.speed;
         this.speed = 0;
         var x = Math.floor(Math.random()*(180));
         var y = Math.floor(Math.random()*(180));
         var mag = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
         this.direction.x = (x/mag);
         this.direction.y = (y/mag);
-        setTimeout(()=>{this.speed = temp} , 3000);
+        setTimeout(()=>{this.speed = 3} , 3000);
     }
     assignevents()
     {
@@ -85,8 +79,11 @@ export class Ball extends Object
         {
             if(this.collisioncd == 0)
             {
-                this.direction.x = - this.direction.x;
-                this.direction.y = - this.direction.y;
+                var x =  (this.mesh.position.x - obj.mesh.position.x);
+                var y =  (this.mesh.position.y - obj.mesh.position.y);
+                var mag = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
+                this.direction.x = (x/mag);
+                this.direction.y = (y/mag);
                 this.collisioncd = 20;
                 const hitaudio = new Three.Audio(ObjectHandler.listener);
                 ObjectHandler.audioloader.load('./game assets/hit.wav',function (buffer)

@@ -1,7 +1,7 @@
 import * as Three from 'three';
 import { ObjectHandler } from '../sceneobjectshandler';
 import { Paddle } from './paddle';
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import { Ball } from './ball';
 
 //camera settings//
@@ -34,7 +34,6 @@ const ball = new Ball();
 ObjectHandler.document = document;
 ObjectHandler.camera = camera;
 ObjectHandler.skybox = new Three.Color( 0x000000 );
-ObjectHandler.bgmpath = './game assets/BGM.mp3';
 ObjectHandler.addobject(paddle);
 ObjectHandler.addobject(paddle2);
 paddle.isplayer = true;

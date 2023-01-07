@@ -37,6 +37,7 @@ ObjectHandler.skybox = new Three.Color( 0x000000 );
 ObjectHandler.addobject(paddle);
 ObjectHandler.addobject(paddle2);
 paddle.isplayer = true;
+ObjectHandler.bgmpath = './game assets/BGM.mp3';
 ObjectHandler.start();
 paddle.mesh.position.set(620,0,0);
 paddle2.mesh.position.set(-620,0,0);

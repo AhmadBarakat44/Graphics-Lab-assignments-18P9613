@@ -23,9 +23,8 @@ export class Player extends Object
         this.boundingbox = new Three.Box3().setFromObject(this.mesh);
     }
     update()
-    {
+    {   
         this.boundingbox.copy(this.mesh.geometry.boundingBox).applyMatrix4(this.mesh.matrixWorld);
-        console.log(this.mesh.position.x);
     }
     assignevents()
     {

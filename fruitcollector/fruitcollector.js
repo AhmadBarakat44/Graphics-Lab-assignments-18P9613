@@ -1,5 +1,5 @@
 import * as Three from 'three';
-//import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import { ObjectHandler } from '../sceneobjectshandler';
 import { Player } from './player'
 import { FruitSpawner } from './FruitSpawner';
@@ -21,7 +21,7 @@ const renderer = new Three.WebGLRenderer({
 })
 renderer.setPixelRatio(devicePixelRatio);
 renderer.setSize(window.innerWidth , window.innerHeight);
-//const controls = new OrbitControls(camera , renderer.domElement);
+const controls = new OrbitControls(camera , renderer.domElement);
 //threejs prerequesits//
 
 //scene data//
@@ -50,7 +50,7 @@ function animate()
 {
     requestAnimationFrame(animate);
     ObjectHandler.update();
-    //controls.update();
+    controls.update();
     renderer.render(ObjectHandler.scene,camera);
     diffculityramp();
 }
